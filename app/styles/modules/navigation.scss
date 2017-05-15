@@ -1,0 +1,29 @@
+// Navigation //
+
+.top-bar {
+  background-color: #333;
+  color: #fff;
+
+  ul {
+    background-color: #333;
+  }
+  
+  a {
+    color: $main-blue;
+  }
+}
+
+.top-bar-right .menu {
+    a {
+      display: inline-block;
+      padding-left: 0;
+      font-style: italic;
+    }
+}
+
+// Active class //
+
+.active {
+  color: red;
+  font-style: bold;
+}
