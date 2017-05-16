@@ -9,7 +9,7 @@ class Nav extends React.Component {
           <ul className="menu">
             <li className="menu-text">React Timer</li>
             <li><IndexLink to="/" activeClassName="active">Stopwatch</IndexLink></li>
-            <li><Link activeClassName="active">Countdown</Link></li>
+            <li><Link to="/countdown" activeClassName="active">Countdown</Link></li>
           </ul>
         </div>
         <div className="top-bar-right">

@@ -1,3 +1,3 @@
-# Boilerplate
+# React Stopwatch
 
-[View on Heroku](Insert link here)
+[View on Heroku](http://mighty-shore-51691.herokuapp.com/)
