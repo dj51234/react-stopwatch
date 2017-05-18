@@ -4,10 +4,14 @@
   background-color: #333;
   color: #fff;
 
+  .active {
+    font-weight: bold;
+  }
+
   ul {
     background-color: #333;
   }
-  
+
   a {
     color: $main-blue;
   }
@@ -22,8 +26,3 @@
 }
 
 // Active class //
-
-.active {
-  color: red;
-  font-style: bold;
-}
