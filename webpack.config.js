@@ -6,6 +6,11 @@ module.exports = {
     'script-loader!foundation-sites/dist/js/foundation.min.js',
     './app/js/index.js'
   ],
+  resolve: {
+    alias: {
+      Clock: 'app/js/components/Clock.js'
+    }
+  },
   externals: {
     jquery: 'jQuery',
   },

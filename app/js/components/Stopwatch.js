@@ -1,9 +1,12 @@
 import React from 'react';
+import Clock from './Clock';
 
 class Stopwatch extends React.Component {
   render() {
     return (
-      <div>Stopwatch component</div>
+      <div>
+        <Clock totalSeconds={194} />
+      </div>
     )
   }
 }
