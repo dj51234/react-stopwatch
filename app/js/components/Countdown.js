@@ -1,6 +1,7 @@
 import React from 'react';
 import Clock from './Clock';
 import CountdownForm from './CountdownForm';
+import Controls from './Controls';
 
 class Countdown extends React.Component {
   constructor() {
@@ -11,6 +12,7 @@ class Countdown extends React.Component {
     }
     this.setCountdown = this.setCountdown.bind(this);
     this.startTimer = this.startTimer.bind(this);
+    this.onStatusChange = this.onStatusChange.bind(this);
   }
 
   startTimer() {
@@ -30,16 +32,33 @@ class Countdown extends React.Component {
         case 'started':
           this.startTimer();
           break;
+        case 'stopped':
+          this.setState({seconds: 0});
+        case 'paused':
+          clearInterval(this.timer);
+          this.timer = undefined;
+          break;
       }
     }
   }
 
+  onStatusChange(newStatus) {
+    this.setState({countdownStatus: newStatus});
+  }
+
   render() {
-    const { seconds } = this.state;
+    const { seconds, countdownStatus } = this.state;
+    const renderControlArea = () => {
+      if(countdownStatus !== 'stopped') {
+        return <Controls countdownStatus={countdownStatus} onStatusChange={this.onStatusChange}/>
+      } else {
+        return <CountdownForm setCountdown={this.setCountdown} />
+      }
+    }
     return (
       <div>
         <Clock totalSeconds={seconds} />
-        <CountdownForm setCountdown={this.setCountdown} />
+        {renderControlArea()}
       </div>
     )
   }
